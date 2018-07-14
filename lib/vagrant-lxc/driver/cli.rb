@@ -125,7 +125,7 @@ module Vagrant
           run(:info, '--name', @name, *cmd)
         end
 
-        def transition_to(target_state, tries = 30, timeout = 1, &block)
+        def transition_to(target_state, tries = 60, timeout = 1, &block)
           raise TransitionBlockNotProvided unless block_given?
 
           yield self

@@ -1,18 +1,19 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'vagrant', git: 'https://github.com/mitchellh/vagrant.git', tag: 'v1.8.7'
+  gem 'vagrant', git: 'https://github.com/mitchellh/vagrant.git', tag: 'v2.0.0'
+  gem 'childprocess'
+  gem 'rest-client'
   gem 'guard'
   gem 'guard-rspec'
   gem 'rb-inotify'
 end
 
 group :development, :test do
-  gem 'rake', '~> 10.4.2'
-  gem 'rspec', '~> 2.99.0'
-  gem 'coveralls', '~> 0.7.2', require: (ENV['COVERAGE'] == 'true')
-  # The is the ref *just* before we switch to childprocess 0.6, which conflicts with vagrant 1.8 deps.
-  gem 'vagrant-spec', git: 'https://github.com/mitchellh/vagrant-spec.git', ref: '5006bc73cd8796465ca09307d4774f8ec8375aa0'
+  gem 'rake'
+  gem 'rspec'
+  gem 'coveralls'
+  gem 'vagrant-spec', git: 'https://github.com/mitchellh/vagrant-spec.git'
 end
 
 group :plugins do
